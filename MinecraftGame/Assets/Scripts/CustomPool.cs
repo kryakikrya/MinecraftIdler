@@ -35,6 +35,7 @@ public class CustomPool : MonoBehaviour
     }
     public void ChangeBlockInPool(PoolMember _poolMember, Block _blockToCopy) // copy Scr. Object Block parameters
     {
+        _poolMember.gameObject.SetActive(true);
         _poolMember.ChangeDurability(_blockToCopy.Durability);
         _poolMember.ChangeID(_blockToCopy.MaterialID);
         _poolMember.ChangeSprite(_blockToCopy.Sprite);
