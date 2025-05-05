@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PoolMember : MonoBehaviour
 {
-    private double _durability;
+    public double _durability;
     private int _materialID;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PoolManager _poolManager;
+
     public void ChangeDurability(double _newDurability)
     {
         _durability = _newDurability;
@@ -24,12 +25,13 @@ public class PoolMember : MonoBehaviour
     {
         if (_durability - _damage > 0)
         {
+            Debug.Log(_durability);
             _durability -= _damage;
         }
         else
         {
             _poolManager.TeleportRow();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
