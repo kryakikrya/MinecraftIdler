@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b93447e961f0f499f88ee39c216183, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: 
-  BlockName: 
-  MaterialID: 0
-  Durability: 0
-  Sprite: {fileID: 0}
+  BlockName: Iron
+  MaterialID: 2
+  Durability: 300
+  Sprite: {fileID: 21300000, guid: f6fc637f73c8c7f4b98ffd699b24fd8a, type: 3}

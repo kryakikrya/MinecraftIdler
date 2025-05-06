@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PoolMember : MonoBehaviour
 {
-    public double _durability;
+    private double _durability;
     private int _materialID;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private PoolManager _poolManager;
@@ -34,5 +34,9 @@ public class PoolMember : MonoBehaviour
             _poolManager.TeleportRow();
             gameObject.SetActive(false);
         }
+    }
+    public int GetMaterialID()
+    {
+        return _materialID;
     }
 }

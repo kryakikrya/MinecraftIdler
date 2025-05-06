@@ -5,21 +5,20 @@ using UnityEngine;
 public class Mining : MonoBehaviour
 {
     [SerializeField] private Transform _raycastPosition;
-    private double _damage;
-    private void Start()
-    {
-        _damage = 1;
-    }
+    [SerializeField] private Upgrade _damage;
+    [SerializeField] private Inventory _inventory;
     private void FixedUpdate()
     {
-        CheckRay(_damage);
+        CheckRay(_damage.GetDamageValue());
     }
     private void CheckRay(double _damage)
     {
         RaycastHit2D hit = Physics2D.Raycast(_raycastPosition.position, Vector3.down, 10);
         if (hit)
         {
-            hit.transform.GetComponent<PoolMember>().GetDamage(_damage); 
+            PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
+            _poolMember.GetDamage(_damage);
+            _inventory.PutInInventory(_poolMember.GetMaterialID(), 1);
         }
         Debug.DrawRay(_raycastPosition.position, Vector3.down, Color.green);
     }

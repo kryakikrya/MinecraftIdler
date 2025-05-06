@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b93447e961f0f499f88ee39c216183, type: 3}
   m_Name: Dirt
   m_EditorClassIdentifier: 
-  BlockName: 
-  MaterialID: 0
-  Durability: 0
-  Sprite: {fileID: 0}
+  BlockName: Dirt
+  MaterialID: 1
+  Durability: 50
+  Sprite: {fileID: 21300000, guid: 1feb5232e26c3074fbef5637d0c37054, type: 3}
