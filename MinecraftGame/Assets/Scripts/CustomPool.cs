@@ -10,32 +10,40 @@ public class CustomPool : MonoBehaviour
 
     private void Start()
     {
-        RandomBlocks();
-    }
-    public void RandomBlocks()
-    {
         List<Block> _blockList = _world.GetBlockList();
         for (int i = 0; i < _pool.Count - 1; i++) // go through the list of pool elements
         {
-            _pool[i].gameObject.SetActive(true);
-            if (Random.Range(0, 101) < 21) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
-            {
-                int _chance = Random.Range(0, 101);
-                if (_chance < 60) ChangeBlockInPool(_pool[i], _world.GetBlockList()[2]); // iron // material chances
-                else if (_chance < 80) ChangeBlockInPool(_pool[i], _world.GetBlockList()[3]); // gold
-                else if (_chance < 101) ChangeBlockInPool(_pool[i], _world.GetBlockList()[4]); // diamond
-            }
-            else
-            {
-                int _chance = Random.Range(0, 101);
-                if (_chance < 90) ChangeBlockInPool(_pool[i], _world.GetBlockList()[0]);
-                else if (_chance < 101) ChangeBlockInPool(_pool[i], _world.GetBlockList()[1]);
-            }
+            Randomizer(_pool[i]);
         }
     }
+    public void RandomBlocks()
+    {
+        for (int i = 0; i < _pool.Count - 1; i++) // go through the list of pool elements
+        {
+            _pool[i].gameObject.SetActive(true);
+            Randomizer(_pool[i]);
+        }
+    }
+
+    public void Randomizer(PoolMember _poolMember)
+    {
+        if (Random.Range(0, 101) < 21) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
+        {
+            int _chance = Random.Range(0, 101);
+            if (_chance < 60) ChangeBlockInPool(_poolMember, _world.GetBlockList()[2]); // iron // material chances
+            else if (_chance < 80) ChangeBlockInPool(_poolMember, _world.GetBlockList()[3]); // gold
+            else if (_chance < 101) ChangeBlockInPool(_poolMember, _world.GetBlockList()[4]); // diamond
+        }
+        else
+        {
+            int _chance = Random.Range(0, 101);
+            if (_chance < 90) ChangeBlockInPool(_poolMember, _world.GetBlockList()[0]);
+            else if (_chance < 101) ChangeBlockInPool(_poolMember, _world.GetBlockList()[1]);
+        }
+    }
+
     public void ChangeBlockInPool(PoolMember _poolMember, Block _blockToCopy) // copy Scr. Object Block parameters
     {
-        _poolMember.gameObject.SetActive(true);
         _poolMember.ChangeDurability(_blockToCopy.Durability);
         _poolMember.ChangeID(_blockToCopy.MaterialID);
         _poolMember.ChangeSprite(_blockToCopy.Sprite);

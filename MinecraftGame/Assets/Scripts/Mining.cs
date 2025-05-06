@@ -13,13 +13,12 @@ public class Mining : MonoBehaviour
     }
     private void CheckRay(double _damage)
     {
-        RaycastHit2D hit = Physics2D.Raycast(_raycastPosition.position, Vector3.down, 10);
+        RaycastHit2D hit = Physics2D.Raycast(_raycastPosition.position, Vector3.down, 1);
         if (hit)
         {
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
             _poolMember.GetDamage(_damage);
             _inventory.PutInInventory(_poolMember.GetMaterialID(), 1);
         }
-        Debug.DrawRay(_raycastPosition.position, Vector3.down, Color.green);
     }
 }
