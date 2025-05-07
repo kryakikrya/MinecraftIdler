@@ -8,6 +8,7 @@ public class CustomPool : MonoBehaviour
     [SerializeField] private List<PoolMember> _pool = new List<PoolMember>();
     [SerializeField] private Global _world;
 
+
     private void Start()
     {
         List<Block> _blockList = _world.GetBlockList();
@@ -30,9 +31,16 @@ public class CustomPool : MonoBehaviour
         if (Random.Range(0, 101) < 21) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
         {
             int _chance = Random.Range(0, 101);
-            if (_chance < 60) ChangeBlockInPool(_poolMember, _world.GetBlockList()[2]); // iron // material chances
-            else if (_chance < 80) ChangeBlockInPool(_poolMember, _world.GetBlockList()[3]); // gold
-            else if (_chance < 101) ChangeBlockInPool(_poolMember, _world.GetBlockList()[4]); // diamond
+            int _curChance = 0;
+            for (int i = 0; i < _world.GetChancesList().Count; i++)
+            {
+                _curChance += _world.GetChancesList()[i];
+                if (_chance < _curChance)
+                {
+                    ChangeBlockInPool(_poolMember, _world.GetBlockList()[i + 2]); // 0 and 1 for stone and dirt
+                    break;
+                }
+            }
         }
         else
         {
