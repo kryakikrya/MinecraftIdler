@@ -14,6 +14,8 @@ public class Global : MonoBehaviour
     [Header("Порядок ресурсов: железо, золото, алмаз")]
 
     [SerializeField] private List<int> _chansesList;
+
+    [SerializeField] private int _oreChance;
     public List<Block> GetBlockList()
     {
         return _blocksList;
@@ -21,5 +23,9 @@ public class Global : MonoBehaviour
     public List<int> GetChancesList()
     {
         return _chansesList;
+    }
+    public int GetOreChance()
+    {
+        return _oreChance;
     }
 }

@@ -28,7 +28,7 @@ public class CustomPool : MonoBehaviour
 
     public void Randomizer(PoolMember _poolMember)
     {
-        if (Random.Range(0, 101) < 21) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
+        if (Random.Range(0, 101) < _world.GetOreChance()) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
         {
             int _chance = Random.Range(0, 101);
             int _curChance = 0;
