@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Jobs;
 
 [CreateAssetMenu(fileName = "New Block")]
 public class Block : ScriptableObject

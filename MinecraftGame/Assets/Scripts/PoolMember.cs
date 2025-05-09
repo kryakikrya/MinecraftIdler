@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class PoolMember : MonoBehaviour
 {
     private double _durability;
     private int _materialID;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private PoolManager _poolManager;
+    private SpriteRenderer _spriteRenderer;
+    private PoolManager _poolManager;
 
+    private void Awake()
+    {
+        _poolManager = gameObject.GetComponentInParent<PoolManager>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public void ChangeDurability(double _newDurability)
     {
         _durability = _newDurability;
