@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class PoolMember : MonoBehaviour
 {
@@ -6,6 +7,14 @@ public class PoolMember : MonoBehaviour
     private int _materialID;
     private SpriteRenderer _spriteRenderer;
     private PoolManager _poolManager;
+
+    private Inventory _inventory;
+
+    [Inject]
+    private void Construct(Inventory inventory)
+    {
+        _inventory = inventory;
+    }
 
     private void Awake()
     {
@@ -34,6 +43,7 @@ public class PoolMember : MonoBehaviour
         else
         {
             _poolManager.TeleportRow();
+            _inventory.PutInInventory(_materialID, 1);
             gameObject.SetActive(false);
         }
     }

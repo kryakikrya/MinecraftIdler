@@ -8,12 +8,6 @@ public class Mining : MonoBehaviour
     [SerializeField] private Upgrade _damage;
     private Inventory _inventory;
 
-    [Inject]
-    private void Construct(Inventory inventory)
-    {
-        _inventory = inventory;
-
-    }
     private void FixedUpdate()
     {
         CheckRay(_damage.GetDamageValue());
@@ -25,7 +19,6 @@ public class Mining : MonoBehaviour
         {
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
             _poolMember.GetDamage(_damage);
-            _inventory.PutInInventory(_poolMember.GetMaterialID(), 1);
         }
     }
 }
