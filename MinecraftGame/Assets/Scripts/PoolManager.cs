@@ -1,10 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class PoolManager : MonoBehaviour
 {
-    [SerializeField] private List<CustomPool> _poolsList = new List<CustomPool>();
-    [SerializeField] private Transform _teleportPosition;
+    private List<CustomPool> _poolsList = new List<CustomPool>();
+    private Transform _teleportPosition;
+
+    [Inject]
+    private void Construct(List<CustomPool> poolsList, Transform teleportPosition)
+    {
+        _poolsList = poolsList;
+        _teleportPosition = teleportPosition;
+    }
 
     private int _poolID = 0;
     public void TeleportRow()

@@ -1,10 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Mining : MonoBehaviour
 {
     [SerializeField] private Transform _raycastPosition;
     [SerializeField] private Upgrade _damage;
-    [SerializeField] private Inventory _inventory;
+    private Inventory _inventory;
+
+    [Inject]
+    private void Construct(Inventory inventory)
+    {
+        _inventory = inventory;
+
+    }
     private void FixedUpdate()
     {
         CheckRay(_damage.GetDamageValue());

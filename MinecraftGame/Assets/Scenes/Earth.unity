@@ -494,18 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927222f07fd2cc74ab5831f5e094fae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolsList:
-  - {fileID: 417190983}
-  - {fileID: 1453836939}
-  - {fileID: 1426052381}
-  - {fileID: 993005715}
-  - {fileID: 1268452144}
-  - {fileID: 1532853134}
-  - {fileID: 1555453315}
-  - {fileID: 738281020}
-  - {fileID: 1237810112}
-  - {fileID: 1396015170}
-  _teleportPosition: {fileID: 2014300559}
 --- !u!4 &18711882
 Transform:
   m_ObjectHideFlags: 0
@@ -4028,7 +4016,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _raycastPosition: {fileID: 1223374671}
   _damage: {fileID: 1989441751}
-  _inventory: {fileID: 1989441750}
 --- !u!50 &312900606
 Rigidbody2D:
   serializedVersion: 4
@@ -6442,7 +6429,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  m_Layer: 0
+  - component: {fileID: 519420034}
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -6557,6 +6545,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &528398768
 GameObject:
   m_ObjectHideFlags: 0
@@ -13010,7 +13042,7 @@ Transform:
   m_Children:
   - {fileID: 1618099259}
   - {fileID: 519420032}
-  m_Father: {fileID: 1989441748}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237810110
 GameObject:
@@ -13186,6 +13218,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1536ec68f412024397783736f3c164d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1273518550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1273518552}
+  - component: {fileID: 1273518551}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1273518551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273518550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3f957282386707e42b6ba35825caccbf, type: 2}
+--- !u!4 &1273518552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273518550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.344949, y: -32.507755, z: 271.10895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290457626
 GameObject:
   m_ObjectHideFlags: 0
@@ -14011,11 +14092,11 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.6658347, b: 0.3820755, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
+  m_FalloffIntensity: 0.669
+  m_Color: {r: 0.9150943, g: 0.52756095, b: 0.21150766, a: 1}
+  m_Intensity: 2.5
+  m_LightVolumeIntensity: 0.02
+  m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -14026,7 +14107,7 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 0.752
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
@@ -19928,7 +20009,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1233978332}
   - {fileID: 18711882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20021,6 +20101,19 @@ MonoBehaviour:
   _chansesList: 3c0000001400000014000000
   _oreChance: 20
   _proceduralGeneration: {fileID: 18711883}
+  _poolsList:
+  - {fileID: 417190983}
+  - {fileID: 1453836939}
+  - {fileID: 1426052381}
+  - {fileID: 993005715}
+  - {fileID: 1268452144}
+  - {fileID: 1532853134}
+  - {fileID: 1555453315}
+  - {fileID: 738281020}
+  - {fileID: 1237810112}
+  - {fileID: 1396015170}
+  _teleportPosition: {fileID: 2014300559}
+  _inventory: {fileID: 0}
 --- !u!1 &2004680383
 GameObject:
   m_ObjectHideFlags: 0
@@ -21128,6 +21221,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1233978332}
   - {fileID: 1989441748}
   - {fileID: 312900604}
   - {fileID: 2004680384}
+  - {fileID: 1273518552}
