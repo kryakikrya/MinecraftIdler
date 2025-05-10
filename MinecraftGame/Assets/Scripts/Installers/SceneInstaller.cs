@@ -9,9 +9,6 @@ public class SceneInstaller : MonoInstaller
     [Space] // eng
     [Header("INT SUMMARY == 100!")]
     [Header("Order of resources: iron, gold, diamond")]
-    [Space] // ru
-    [Header("ׁ׃ְּּ ְַֽ׳ֵָֹֽ == 100!")]
-    [Header("ֿמנÿהמך נוסףנסמג: זוכוחמ, חמכמעמ, אכלאח")]
 
     [SerializeField] private List<int> _chansesList;
     [SerializeField] private int _oreChance;

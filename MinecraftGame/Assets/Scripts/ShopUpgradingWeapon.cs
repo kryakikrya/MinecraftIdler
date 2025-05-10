@@ -1,17 +1,14 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using Zenject;
 
 public class ShopUpgradingWeapon : MonoBehaviour
 {
-    [SerializeField] private int _valueOfUpgrade;
+    [SerializeField] private int _buff;
     [SerializeField] private List<int> _costs;
 
     [Header("List of materials for upgrade (max 3) number of price tags = number of IDs")]
-    [SerializeField, Range(1, 3)] private List<int> _materialsIDList;
+    [SerializeField] private List<int> _materialsIDList;
 
     [Space]
     private Inventory _inventory;
@@ -31,8 +28,12 @@ public class ShopUpgradingWeapon : MonoBehaviour
             if (_inventory.CheckInventory(_materialsIDList[i], _costs[i]))
             {
                 _inventory.RemoveFromInventory(_materialsIDList[i], _costs[i]);
-                _damage.IncreaseDamage(_valueOfUpgrade);
+                _damage.IncreaseDamage(_buff);
             }
         }
+    }
+    public List<int> GetMaterialsIDList()
+    {
+        return _materialsIDList;
     }
 }
