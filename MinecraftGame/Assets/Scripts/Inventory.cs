@@ -21,7 +21,15 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveFromInventory(int _materialID, int _value)
     {
-        _inventory[_materialID] -= _value;
+        if (_inventory[_materialID] >= _value || CheckInventory(_materialID, _value))
+        {
+            _inventory[_materialID] -= _value;
+        }
+    }
+
+    public bool CheckInventory(int _materialID, int _value)
+    {
+        return _inventory[_materialID] >= _value;
     }
     public int GetMaterialValue(int _materialID)
     {

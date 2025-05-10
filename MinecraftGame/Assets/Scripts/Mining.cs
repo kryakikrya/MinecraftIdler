@@ -5,9 +5,13 @@ using Zenject;
 public class Mining : MonoBehaviour
 {
     [SerializeField] private Transform _raycastPosition;
-    [SerializeField] private Upgrade _damage;
-    private Inventory _inventory;
+    private Upgrade _damage;
 
+    [Inject]
+    private void Construct(Upgrade damage)
+    {
+        _damage = damage;
+    }
     private void FixedUpdate()
     {
         CheckRay(_damage.GetDamageValue());

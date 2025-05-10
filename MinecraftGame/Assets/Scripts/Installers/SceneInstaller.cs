@@ -23,6 +23,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private Inventory _inventory;
 
+    [SerializeField] private Upgrade _damage;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -32,5 +34,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<List<CustomPool>>().FromInstance(_poolsList).AsSingle();
         Container.Bind<Transform>().FromInstance(_teleportPosition).AsSingle();
         Container.Bind<Inventory>().FromInstance(_inventory).AsSingle();
+        Container.Bind<Upgrade>().FromInstance(_damage).AsSingle();
     }
 }
