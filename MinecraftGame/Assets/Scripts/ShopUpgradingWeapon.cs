@@ -29,11 +29,16 @@ public class ShopUpgradingWeapon : MonoBehaviour
             {
                 _inventory.RemoveFromInventory(_materialsIDList[i], _costs[i]);
                 _damage.IncreaseDamage(_buff);
+                Debug.Log(_damage.GetDamageValue());
             }
         }
     }
     public List<int> GetMaterialsIDList()
     {
         return _materialsIDList;
+    }
+    public List<int> GetCostsList()
+    {
+        return _costs;
     }
 }

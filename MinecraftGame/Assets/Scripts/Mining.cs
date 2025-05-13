@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -6,15 +7,16 @@ public class Mining : MonoBehaviour
 {
     [SerializeField] private Transform _raycastPosition;
     private Upgrade _damage;
+    [SerializeField] float _miningCD;
 
     [Inject]
     private void Construct(Upgrade damage)
     {
         _damage = damage;
     }
-    private void FixedUpdate()
+    private void Start()
     {
-        CheckRay(_damage.GetDamageValue());
+        StartCoroutine(MiningCD(_miningCD));
     }
     private void CheckRay(double _damage)
     {
@@ -23,6 +25,14 @@ public class Mining : MonoBehaviour
         {
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
             _poolMember.GetDamage(_damage);
+        }
+    }
+    private IEnumerator MiningCD(float _miningCD)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(_miningCD);
+            CheckRay(_damage.GetDamageValue());
         }
     }
 }

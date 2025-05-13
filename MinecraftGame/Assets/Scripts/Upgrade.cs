@@ -6,7 +6,7 @@ public class Upgrade : MonoBehaviour
 
     private void Start()
     {
-        _damage = 2;
+        _damage = 30;
     }
     public void IncreaseDamage(double _upgrade)
     {

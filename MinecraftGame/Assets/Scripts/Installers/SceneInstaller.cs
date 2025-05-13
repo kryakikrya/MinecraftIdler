@@ -22,6 +22,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private Upgrade _damage;
 
+    [SerializeField] private List<Items> _itemsList;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -32,5 +34,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<Transform>().FromInstance(_teleportPosition).AsSingle();
         Container.Bind<Inventory>().FromInstance(_inventory).AsSingle();
         Container.Bind<Upgrade>().FromInstance(_damage).AsSingle();
+        Container.Bind<List<Items>>().FromInstance(_itemsList).AsSingle();
     }
 }

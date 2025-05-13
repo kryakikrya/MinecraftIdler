@@ -7,4 +7,5 @@ public class Block : ScriptableObject
     public int MaterialID;
     public double Durability;
     public Sprite Sprite;
+    public Sprite ItemSprite;
 }

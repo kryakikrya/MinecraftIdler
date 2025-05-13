@@ -37,7 +37,6 @@ public class PoolMember : MonoBehaviour
     {
         if (_durability - _damage > 0)
         {
-            Debug.Log(_durability);
             _durability -= _damage;
         }
         else
