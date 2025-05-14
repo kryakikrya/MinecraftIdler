@@ -1,6 +1,8 @@
 using UnityEngine;
 using Zenject;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class PoolMember : MonoBehaviour
 {
     private double _durability;
@@ -10,10 +12,13 @@ public class PoolMember : MonoBehaviour
 
     private Inventory _inventory;
 
+    private List<GameObject> _blocksToDisableAtStart;
+
     [Inject]
-    private void Construct(Inventory inventory)
+    private void Construct(Inventory inventory, List<GameObject> blocksToDisable)
     {
         _inventory = inventory;
+        _blocksToDisableAtStart = blocksToDisable;
     }
 
     private void Awake()
@@ -21,6 +26,14 @@ public class PoolMember : MonoBehaviour
         _poolManager = gameObject.GetComponentInParent<PoolManager>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    private void Start()
+    {
+        for (int i = 0; i < _blocksToDisableAtStart.Count; i++)
+        {
+            _blocksToDisableAtStart[i].SetActive(false);
+        }
+    }
+
     public void ChangeDurability(double _newDurability)
     {
         _durability = _newDurability;

@@ -14,6 +14,7 @@ public class ChangeShopUI : MonoBehaviour
     [SerializeField] private int _resultItemID;
     private List<Block> _blocksList;
     private List<Items> _itemsList;
+    [SerializeField] List<GameObject> _blocksToDisable;
 
     [Inject]
     private void Construct(List<Block> blocksList, List<Items> itemsList)
