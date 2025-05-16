@@ -3,10 +3,11 @@ using UnityEngine;
 public class Upgrade : MonoBehaviour
 {
     private double _damage;
+    [SerializeField] double _baseDamage;
 
     private void Start()
     {
-        _damage = 30;
+        _damage += _baseDamage;
     }
     public void IncreaseDamage(double _upgrade)
     {

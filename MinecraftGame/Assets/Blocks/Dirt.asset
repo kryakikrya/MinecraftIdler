@@ -15,5 +15,6 @@ MonoBehaviour:
   BlockName: Dirt
   MaterialID: 1
   Durability: 90
+  Expirience: 0
   Sprite: {fileID: 21300000, guid: 1feb5232e26c3074fbef5637d0c37054, type: 3}
   ItemSprite: {fileID: 0}

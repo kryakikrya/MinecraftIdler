@@ -7,6 +7,7 @@ public class PoolMember : MonoBehaviour
 {
     private double _durability;
     private int _materialID;
+    private float _expirience;
     private SpriteRenderer _spriteRenderer;
     private PoolManager _poolManager;
 
@@ -14,11 +15,15 @@ public class PoolMember : MonoBehaviour
 
     private List<GameObject> _blocksToDisableAtStart;
 
+    private Expirience _levelSystem;
+
+
     [Inject]
-    private void Construct(Inventory inventory, List<GameObject> blocksToDisable)
+    private void Construct(Inventory inventory, List<GameObject> blocksToDisable, Expirience levelSystem)
     {
         _inventory = inventory;
         _blocksToDisableAtStart = blocksToDisable;
+        _levelSystem = levelSystem;
     }
 
     private void Awake()
@@ -46,6 +51,11 @@ public class PoolMember : MonoBehaviour
     {
         _materialID = _newID;
     }
+
+    public void ChangeExpirience(float _newExpirience)
+    {
+        _expirience = _newExpirience;
+    }
     public void GetDamage(double _damage)
     {
         if (_durability - _damage > 0)
@@ -56,6 +66,7 @@ public class PoolMember : MonoBehaviour
         {
             _poolManager.TeleportRow();
             _inventory.PutInInventory(_materialID, 1);
+            _levelSystem.IncreaseExpirience(_expirience);
             gameObject.SetActive(false);
         }
     }

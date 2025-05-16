@@ -4,7 +4,7 @@ using Zenject;
 
 public class CustomPool : MonoBehaviour
 {
-    private List<PoolMember> _pool = new List<PoolMember>();
+    public List<PoolMember> _pool = new List<PoolMember>();
     private Generation _proceduralGeneration;
 
     [Inject]
@@ -25,7 +25,7 @@ public class CustomPool : MonoBehaviour
     }
     public void RandomBlocks()
     {
-        for (int i = 0; i < _pool.Count - 1; i++) // go through the list of pool elements
+        for (int i = 0; i < _pool.Count; i++) // go through the list of pool elements
         {
             _pool[i].gameObject.SetActive(true);
             _proceduralGeneration.Randomizer(_pool[i]);

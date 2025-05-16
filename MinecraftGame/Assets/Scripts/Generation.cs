@@ -45,5 +45,6 @@ public class Generation : MonoBehaviour
         _poolMember.ChangeDurability(_blockToCopy.Durability);
         _poolMember.ChangeID(_blockToCopy.MaterialID);
         _poolMember.ChangeSprite(_blockToCopy.Sprite);
+        _poolMember.ChangeExpirience(_blockToCopy.Expirience);
     }
 }
