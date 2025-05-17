@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     };
     public void PutInInventory(int _materialID, int _value)
     {
-        _value *= _fortuneMudifier;
+        _value *= _fortune.GetFortuneModifier();
         _inventory[_materialID] += _value;
     }
     public void RemoveFromInventory(int _materialID, int _value)

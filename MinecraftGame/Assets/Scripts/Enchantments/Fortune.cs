@@ -26,4 +26,9 @@ public class Fortune : MonoBehaviour
             _fortuneModifier += _buff;
         }
     }
+
+    public int GetFortuneModifier()
+    {
+        return _fortuneModifier;
+    }
 }
