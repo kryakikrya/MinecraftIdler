@@ -10,6 +10,9 @@ public class Expirience : MonoBehaviour
     private int _level;
     private float _expirienceForNextLevel;
 
+    [SerializeField] float _baseExpirience;
+    [SerializeField] float _levelModifier;
+
     private UIExpirience _uiExpirience;
 
     [Inject]
@@ -49,14 +52,24 @@ public class Expirience : MonoBehaviour
     public void LevelUp()
     {
         _level += 1;
-        _expirienceForNextLevel = (_level * 50 + 100) * 1.1f;
+        UpdateExpirienceForNextLevel();
         _uiExpirience.UpdateLevel();
     }
 
     public void LevelDown(int value)
     {
         _level -= value;
-        _expirienceForNextLevel = (_level * 50 + 100) * 1.1f;
+        UpdateExpirienceForNextLevel();
         _uiExpirience.UpdateLevel();
+    }
+
+    private void UpdateExpirienceForNextLevel()
+    {
+        float _difficulty = _baseExpirience / 2;
+        for (int i = 1; i < _level; i++)
+        {
+            _difficulty *= _levelModifier;
+        }
+        _expirienceForNextLevel = _baseExpirience + _difficulty;
     }
 }

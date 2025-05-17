@@ -13,16 +13,14 @@ public class PoolMember : MonoBehaviour
 
     private Inventory _inventory;
 
-    private List<GameObject> _blocksToDisableAtStart;
 
     private Expirience _levelSystem;
 
 
     [Inject]
-    private void Construct(Inventory inventory, List<GameObject> blocksToDisable, Expirience levelSystem)
+    private void Construct(Inventory inventory, Expirience levelSystem)
     {
         _inventory = inventory;
-        _blocksToDisableAtStart = blocksToDisable;
         _levelSystem = levelSystem;
     }
 
@@ -30,13 +28,6 @@ public class PoolMember : MonoBehaviour
     {
         _poolManager = gameObject.GetComponentInParent<PoolManager>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-    private void Start()
-    {
-        for (int i = 0; i < _blocksToDisableAtStart.Count; i++)
-        {
-            _blocksToDisableAtStart[i].SetActive(false);
-        }
     }
 
     public void ChangeDurability(double _newDurability)

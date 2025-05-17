@@ -30,6 +30,10 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private UIExpirience _uiExpirience;
 
+    [SerializeField] private AddNewBlocks _addNewBlocks;
+
+    [SerializeField] private Fortune _fortune;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -44,5 +48,7 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<List<PoolMember>>().FromInstance(_blocksToDisable).AsSingle();
         Container.Bind<Expirience>().FromInstance(_expirience).AsSingle();
         Container.Bind<UIExpirience>().FromInstance(_uiExpirience).AsSingle();
+        Container.Bind<AddNewBlocks>().FromInstance(_addNewBlocks).AsSingle();
+        Container.Bind<Fortune>().FromInstance(_fortune).AsSingle();
     }
 }

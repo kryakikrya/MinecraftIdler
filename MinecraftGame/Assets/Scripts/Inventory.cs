@@ -1,8 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Inventory : MonoBehaviour
 {
+    private Fortune _fortune;
+
+    [Inject]
+    private void Construct(Fortune fortune)
+    {
+        _fortune = fortune;
+    }
+
     private Dictionary<int, int> _inventory = new Dictionary<int, int>()
     {
         [0] = 0, // Stone
@@ -17,6 +26,7 @@ public class Inventory : MonoBehaviour
     };
     public void PutInInventory(int _materialID, int _value)
     {
+        _value *= _fortuneMudifier;
         _inventory[_materialID] += _value;
     }
     public void RemoveFromInventory(int _materialID, int _value)
@@ -35,4 +45,5 @@ public class Inventory : MonoBehaviour
     {
         return _inventory[_materialID];
     }
+
 }
