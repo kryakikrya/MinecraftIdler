@@ -15,4 +15,6 @@ MonoBehaviour:
   BlockName: Stone
   MaterialID: 0
   Durability: 100
+  Expirience: 0
   Sprite: {fileID: 21300000, guid: 3c44915747601a64b99fb33c3f14c521, type: 3}
+  ItemSprite: {fileID: 21300000, guid: f8fdb130b8451ef43a9dfe10e5e8b30c, type: 3}
