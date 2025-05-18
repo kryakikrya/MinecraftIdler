@@ -23,7 +23,7 @@ public class ShopUpgradingWeapon : MonoBehaviour
 
     public void UpgradeWeapon()
     {
-        for (int i = 0;  i < _materialsIDList.Count - 1; i++)
+        for (int i = 0;  i < _materialsIDList.Count; i++)
         {
             if (_inventory.CheckInventory(_materialsIDList[i], _costs[i]))
             {
