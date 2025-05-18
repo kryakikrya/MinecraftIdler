@@ -25,6 +25,13 @@ public class Sharpness : MonoBehaviour
         {
             _levelSystem.LevelDown(_cost);
             _damage.IncreaseModifier(_modifierBuff);
+            _modifierBuff++;
+            _cost *= 2;
         }
+    }
+
+    public int GetCost()
+    {
+        return _cost;
     }
 }

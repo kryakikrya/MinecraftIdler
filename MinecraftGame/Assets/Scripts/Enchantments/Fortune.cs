@@ -20,15 +20,18 @@ public class Fortune : MonoBehaviour
 
     public void IncreaseFortune()
     {
-        if (_levelSystem.GetLevel() > _cost)
-        {
             _levelSystem.LevelDown(_cost);
             _fortuneModifier += _buff;
-        }
+            _buff++;
+            _cost *= 2;
     }
 
     public int GetFortuneModifier()
     {
         return _fortuneModifier;
+    }
+    public int GetCost()
+    {
+        return _cost;
     }
 }

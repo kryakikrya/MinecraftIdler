@@ -32,6 +32,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private AddNewBlocks _addNewBlocks;
 
+    [SerializeField] private Sharpness _sharpness;
+
     [SerializeField] private Fortune _fortune;
 
     public override void InstallBindings()
@@ -49,6 +51,7 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<Expirience>().FromInstance(_expirience).AsSingle();
         Container.Bind<UIExpirience>().FromInstance(_uiExpirience).AsSingle();
         Container.Bind<AddNewBlocks>().FromInstance(_addNewBlocks).AsSingle();
+        Container.Bind<Sharpness>().FromInstance(_sharpness).AsSingle();
         Container.Bind<Fortune>().FromInstance(_fortune).AsSingle();
     }
 }

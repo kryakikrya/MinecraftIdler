@@ -52,20 +52,29 @@ public class Expirience : MonoBehaviour
     public void LevelUp()
     {
         _level += 1;
+        _expirience = 0;
+        _uiExpirience.UpdateExpirience();
         UpdateExpirienceForNextLevel();
         _uiExpirience.UpdateLevel();
+        Debug.Log("Level " + GetLevel().ToString() + " Exp for the new level " + GetExpirienceForNextLevel().ToString());
     }
 
     public void LevelDown(int value)
     {
-        _level -= value;
-        UpdateExpirienceForNextLevel();
-        _uiExpirience.UpdateLevel();
+        if (_level - value >= 0)
+        {
+            _level -= value;
+            _expirience = 0;
+            _uiExpirience.UpdateExpirience();
+            UpdateExpirienceForNextLevel();
+            _uiExpirience.UpdateLevel();
+            Debug.Log("Level " + GetLevel().ToString() + " Exp for the new level " + GetExpirienceForNextLevel().ToString());
+        }
     }
 
     private void UpdateExpirienceForNextLevel()
     {
-        float _difficulty = _baseExpirience / 2;
+        float _difficulty = _baseExpirience;
         for (int i = 1; i < _level; i++)
         {
             _difficulty *= _levelModifier;

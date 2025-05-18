@@ -24,6 +24,11 @@ public class ChangeShopUI : MonoBehaviour
     void Start()
     {
         _panel = GetComponent<ShopUpgradingWeapon>();
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
         ChangeImage(_panel.GetMaterialsIDList());
         ChangeCost(_panel.GetCostsList());
     }
