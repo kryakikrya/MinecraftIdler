@@ -17,4 +17,4 @@ MonoBehaviour:
   Durability: 90
   Expirience: 0
   Sprite: {fileID: 21300000, guid: 1feb5232e26c3074fbef5637d0c37054, type: 3}
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 21300000, guid: cfa74348ac228f348b79d4c2e9a2f7be, type: 3}

@@ -29,5 +29,24 @@ public class UIInventory : MonoBehaviour
     private void OnEnable()
     {
         _text.text = _inventory.GetMaterialValue(_materialID).ToString();
+        StartCoroutine(Cooldown());
+    }
+    private void UpdateText()
+    {
+        _text.text = _inventory.GetMaterialValue(_materialID).ToString();
+    }
+
+    IEnumerator Cooldown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            _text.text = _inventory.GetMaterialValue(_materialID).ToString();
+        }
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(Cooldown());
     }
 }
