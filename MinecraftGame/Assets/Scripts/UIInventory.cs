@@ -9,6 +9,7 @@ public class UIInventory : MonoBehaviour
     [SerializeField] private int _materialID;
     private Image _image;
     [SerializeField]  private TextMeshProUGUI _text;
+    private Coroutine _cooldown;
 
     [Space]
     private Inventory _inventory;
@@ -25,6 +26,7 @@ public class UIInventory : MonoBehaviour
     {
         _image = GetComponentInChildren<Image>();
         _image.sprite = _blocksList[_materialID].ItemSprite;
+        _cooldown = StartCoroutine(Cooldown());
     }
     private void OnEnable()
     {
@@ -47,6 +49,6 @@ public class UIInventory : MonoBehaviour
 
     private void OnDisable()
     {
-        StopCoroutine(Cooldown());
+        StopCoroutine(_cooldown);
     }
 }
