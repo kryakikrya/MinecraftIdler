@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zenject;
 using System.Collections.Generic;
+using System.Collections;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class PoolMember : MonoBehaviour
@@ -10,10 +11,7 @@ public class PoolMember : MonoBehaviour
     private float _expirience;
     private SpriteRenderer _spriteRenderer;
     private PoolManager _poolManager;
-
     private Inventory _inventory;
-
-
     private Expirience _levelSystem;
 
 
@@ -47,7 +45,7 @@ public class PoolMember : MonoBehaviour
     {
         _expirience = _newExpirience;
     }
-    public void GetDamage(double _damage)
+    public void GetDamage(double _damage, bool _isLMB)
     {
         if (_durability - _damage > 0)
         {
@@ -55,7 +53,10 @@ public class PoolMember : MonoBehaviour
         }
         else
         {
-            _poolManager.TeleportRow();
+            if (_isLMB == false)
+            {
+                _poolManager.TeleportRow();
+            }
             _inventory.PutInInventory(_materialID, 1);
             _levelSystem.IncreaseExpirience(_expirience);
             gameObject.SetActive(false);
