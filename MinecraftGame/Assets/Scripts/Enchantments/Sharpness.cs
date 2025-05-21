@@ -21,13 +21,10 @@ public class Sharpness : MonoBehaviour
 
     public void EnchantWeapon()
     {
-        if (_levelSystem.GetLevel() > _cost)
-        {
             _levelSystem.LevelDown(_cost);
             _damage.IncreaseModifier(_modifierBuff);
             _modifierBuff++;
             _cost *= 2;
-        }
     }
 
     public int GetCost()
