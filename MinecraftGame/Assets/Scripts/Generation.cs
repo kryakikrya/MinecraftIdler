@@ -8,6 +8,7 @@ public class Generation : MonoBehaviour
     private List<Block> _blocksList;
     private List<int> _chansesList;
     private int _oreChance;
+    private int _sumOfChances;
 
     [Inject]
     private void Construct(List<Block> blocksList, List<int> chansesList, int oreChance)
@@ -17,11 +18,24 @@ public class Generation : MonoBehaviour
         _oreChance = oreChance;
     }
 
+    private void Start()
+    {
+        UpdateSumOfChanses();
+    }
+
+    public void UpdateSumOfChanses()
+    {
+        for (int i = 0; i < _chansesList.Count; i++)
+        {
+            _sumOfChances += _chansesList[i];
+        }
+    }
+
     public void Randomizer(PoolMember _poolMember)
     {
         if (Random.Range(0, 101) < _oreChance) // if < 11, then it's material (diamond, gold etc), if not, it's something like stone or earth
         {
-            int _chance = Random.Range(0, 101);
+            int _chance = Random.Range(0, _sumOfChances);
             int _curChance = 0;
             for (int i = 0; i < _chansesList.Count; i++)
             {
