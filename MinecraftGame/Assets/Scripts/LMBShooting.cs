@@ -18,24 +18,25 @@ public class LMBShooting : MonoBehaviour
         _damage = damage;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        _canShoot = true;
         if (_poolMember == null)
             _poolMember = GetComponent<PoolMember>();
     }
     private void OnMouseDown()
     {
-        if (Input.GetMouseButton(0) & _canShoot)
+        if (_canShoot)
         {
-            Debug.Log(1);
             _poolMember.GetDamage(_damage.GetDamageValue() * 2, true);
             _canShoot = false;
-            if (gameObject.active == true)
+            if (gameObject.activeSelf == true)
             {
                 StartCoroutine(MiningCD(_miningCD));
             }
         }
     }
+
     private IEnumerator MiningCD(float _miningCD)
     {
         yield return new WaitForSeconds(_miningCD);
