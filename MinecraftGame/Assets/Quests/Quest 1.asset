@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Quest 1
   m_EditorClassIdentifier: 
-  QuestName: 
-  QuestDescription: 
-  QuestAuthor: 
-  QuestType: 0
+  QuestName: Test Name
+  QuestDescription: Farm 1 Sigma
+  QuestAuthor: Alex
+  QuestType: 1
   _requirementsDictionary:
-    _questRequirement: []
+    _questRequirement:
+    - _materialID: 2
+      _cost: 3
