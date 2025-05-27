@@ -36,22 +36,28 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private Fortune _fortune;
 
+    [SerializeField] private List<Quest> _quests;
+
+    [SerializeField] private QuestsUI _questsUI;
+
     public override void InstallBindings()
     {
-        Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
-        Container.Bind<List<int>>().FromInstance(_chansesList).AsSingle();
-        Container.Bind<int>().FromInstance(_oreChance).AsSingle();
-        Container.Bind<Generation>().FromInstance(_proceduralGeneration).AsSingle();
-        Container.Bind<List<CustomPool>>().FromInstance(_poolsList).AsSingle();
-        Container.Bind<Transform>().FromInstance(_teleportPosition).AsSingle();
-        Container.Bind<Inventory>().FromInstance(_inventory).AsSingle();
-        Container.Bind<Upgrade>().FromInstance(_damage).AsSingle();
-        Container.Bind<List<Items>>().FromInstance(_itemsList).AsSingle();
-        Container.Bind<List<PoolMember>>().FromInstance(_blocksToDisable).AsSingle();
-        Container.Bind<Expirience>().FromInstance(_expirience).AsSingle();
-        Container.Bind<UIExpirience>().FromInstance(_uiExpirience).AsSingle();
-        Container.Bind<AddNewBlocks>().FromInstance(_addNewBlocks).AsSingle();
-        Container.Bind<Sharpness>().FromInstance(_sharpness).AsSingle();
-        Container.Bind<Fortune>().FromInstance(_fortune).AsSingle();
+        Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle().NonLazy();
+        Container.Bind<List<int>>().FromInstance(_chansesList).AsSingle().NonLazy();
+        Container.Bind<int>().FromInstance(_oreChance).AsSingle().NonLazy();
+        Container.Bind<Generation>().FromInstance(_proceduralGeneration).AsSingle().NonLazy();
+        Container.Bind<List<CustomPool>>().FromInstance(_poolsList).AsSingle().NonLazy();
+        Container.Bind<Transform>().FromInstance(_teleportPosition).AsSingle().NonLazy();
+        Container.Bind<Inventory>().FromInstance(_inventory).AsSingle().NonLazy();
+        Container.Bind<Upgrade>().FromInstance(_damage).AsSingle().NonLazy();
+        Container.Bind<List<Items>>().FromInstance(_itemsList).AsSingle().NonLazy();
+        Container.Bind<List<PoolMember>>().FromInstance(_blocksToDisable).AsSingle().NonLazy();
+        Container.Bind<Expirience>().FromInstance(_expirience).AsSingle().NonLazy();
+        Container.Bind<UIExpirience>().FromInstance(_uiExpirience).AsSingle().NonLazy();
+        Container.Bind<AddNewBlocks>().FromInstance(_addNewBlocks).AsSingle().NonLazy();
+        Container.Bind<Sharpness>().FromInstance(_sharpness).AsSingle().NonLazy();
+        Container.Bind<Fortune>().FromInstance(_fortune).AsSingle().NonLazy();
+        Container.Bind<List<Quest>>().FromInstance(_quests).AsSingle().NonLazy();
+        Container.Bind<QuestsUI>().FromInstance(_questsUI).AsSingle().NonLazy();
     }
 }
