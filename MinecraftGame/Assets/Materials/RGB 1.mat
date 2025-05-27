@@ -38,6 +38,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Float: 0.01
+    - _Float_1: 24
+    - _Float_2: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
