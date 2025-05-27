@@ -18,7 +18,7 @@ public class CustomPool : MonoBehaviour
     {
         PoolMember[] _pmArray = GetComponentsInChildren<PoolMember>(true);
         _pool = new List<PoolMember>(_pmArray);
-        for (int i = 0; i < _pool.Count - 1; i++) // go through the list of pool elements
+        for (int i = 0; i < _pool.Count; i++) // go through the list of pool elements
         {
             _proceduralGeneration.Randomizer(_pool[i]);
         }

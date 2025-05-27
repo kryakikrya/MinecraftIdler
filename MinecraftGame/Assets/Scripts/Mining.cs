@@ -24,7 +24,7 @@ public class Mining : MonoBehaviour
         if (hit)
         {
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
-            _poolMember.GetDamage(_damage);
+            _poolMember.GetDamage(_damage, false);
         }
     }
     private IEnumerator MiningCD(float _miningCD)
