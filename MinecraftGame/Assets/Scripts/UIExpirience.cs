@@ -10,6 +10,7 @@ public class UIExpirience : MonoBehaviour
 {
     private Expirience _levelSystem;
     private Image _image;
+    [SerializeField]  private Image _image2;
     [SerializeField] private List<TextMeshProUGUI> _textLevel;
 
     [Inject]
@@ -26,6 +27,7 @@ public class UIExpirience : MonoBehaviour
     public void UpdateExpirience()
     {
         _image.fillAmount = _levelSystem.GetExpirience() / _levelSystem.GetExpirienceForNextLevel();
+        _image2.fillAmount = _levelSystem.GetExpirience() / _levelSystem.GetExpirienceForNextLevel();
     }
 
     public void UpdateLevel()
