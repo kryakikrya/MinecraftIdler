@@ -36,6 +36,10 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private Fortune _fortune;
 
+    [SerializeField] private List<IMainQuest> _mainQuestList;
+
+    [SerializeField] private List<IQuest> _sideQuestList;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
