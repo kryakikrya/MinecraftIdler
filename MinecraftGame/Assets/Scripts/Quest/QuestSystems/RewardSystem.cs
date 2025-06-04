@@ -66,10 +66,18 @@ public class UnlockExpirience : RewardSystem
     }
 }
 
-public class IncreaseMaxLevelOfEnchantment : RewardSystem
+public class IncreaseSharpnessMaxLvl : RewardSystem
 {
+
+    private Sharpness _sharpness;
+
+    [Inject]
+    private void Construct(Sharpness sharpness)
+    {
+        _sharpness = sharpness;
+    }
     public override void GetReward()
     {
-
+        _sharpness.IncreaseMaxLvl(2); // const
     }
 }
