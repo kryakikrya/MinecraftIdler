@@ -35,4 +35,13 @@ public class UIExpirience : MonoBehaviour
             _textLevel[i].text = _levelSystem.GetLevel().ToString();
         }
     }
+
+    public void TurnOn()
+    {
+        _image.gameObject.SetActive(true);
+        for (int i = 0; i < _textLevel.Count; i++)
+        {
+            _textLevel[i].gameObject.SetActive(true);
+        }
+    }
 }

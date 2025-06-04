@@ -6,6 +6,8 @@ using Zenject;
 
 public class Expirience : MonoBehaviour
 {
+    private bool _isActive = false;
+
     private float _expirience;
     private int _level;
     private float _expirienceForNextLevel;
@@ -19,6 +21,12 @@ public class Expirience : MonoBehaviour
     private void Construct(UIExpirience uiExpirience)
     {
         _uiExpirience = uiExpirience;
+    }
+
+    public void SetActive()
+    {
+        _isActive = true;
+        _uiExpirience.TurnOn();
     }
 
     private void Start()
@@ -40,13 +48,16 @@ public class Expirience : MonoBehaviour
     }
     public void IncreaseExpirience(float value)
     {
-        _expirience += value;
-        if (_expirience >= _expirienceForNextLevel)
+        if (_isActive)
         {
-            _expirience -= _expirienceForNextLevel;
-            LevelUp();
+            _expirience += value;
+            if (_expirience >= _expirienceForNextLevel)
+            {
+                _expirience -= _expirienceForNextLevel;
+                LevelUp();
+            }
+            _uiExpirience.UpdateExpirience();
         }
-        _uiExpirience.UpdateExpirience();
     }
 
     public void LevelUp()

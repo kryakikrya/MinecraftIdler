@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Fortune : MonoBehaviour
+public class Fortune : Enchantment
 {
+    private int _maxLevel;
+    private int _currentLevel;
+
     [SerializeField] private int _buff;
     [SerializeField] private int _cost;
     private int _fortuneModifier = 1;
@@ -20,10 +23,13 @@ public class Fortune : MonoBehaviour
 
     public void IncreaseFortune()
     {
+        if (_currentLevel < _maxLevel)
+        {
             _levelSystem.LevelDown(_cost);
             _fortuneModifier += _buff;
             _buff++;
             _cost *= 2;
+        }
     }
 
     public int GetFortuneModifier()
@@ -33,5 +39,10 @@ public class Fortune : MonoBehaviour
     public int GetCost()
     {
         return _cost;
+    }
+
+    public override void IncreaseMaxLvl(int lvl)
+    {
+        _maxLevel += lvl;
     }
 }

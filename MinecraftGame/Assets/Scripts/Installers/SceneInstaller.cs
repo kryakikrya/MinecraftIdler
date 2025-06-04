@@ -40,6 +40,9 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private List<IQuest> _sideQuestList;
 
+    [SerializeField] private List<BlockToAdd> _blocksToAdd;
+
+    [SerializeField] private List<UnlockNewMenu> _unlockableMenuList;
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -57,5 +60,8 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<AddNewBlocks>().FromInstance(_addNewBlocks).AsSingle();
         Container.Bind<Sharpness>().FromInstance(_sharpness).AsSingle();
         Container.Bind<Fortune>().FromInstance(_fortune).AsSingle();
+        Container.Bind<List<IMainQuest>>().FromInstance(_mainQuestList).AsSingle();
+        Container.Bind<List<IQuest>>().FromInstance(_sideQuestList).AsSingle();
+        Container.Bind<List<BlockToAdd>>().FromInstance(_blocksToAdd).AsSingle();
     }
 }

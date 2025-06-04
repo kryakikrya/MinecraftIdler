@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
-  m_Name: Main 1
-  m_EditorClassIdentifier: 
-  _questName: Hello, world!
-  _questDescription: 
-  _questAuthor: 
-  _questId: 0
-  _requirementsDictionary:
-    _questRequirement: []
+  m_Script: {fileID: 0}
+  m_Name: Block To Add
+  m_EditorClassIdentifier: Assembly-CSharp::BlockToAdd
+  BlockName: 
+  MaterialID: 0
+  Durability: 0
+  Expirience: 0
+  Sprite: {fileID: 0}
+  ItemSprite: {fileID: 0}

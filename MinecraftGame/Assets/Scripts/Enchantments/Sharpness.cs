@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Sharpness : MonoBehaviour
+public class Sharpness : Enchantment
 {
+    private int _maxLevel;
+    private int _currentLevel;
+
     [SerializeField] private int _modifierBuff;
     [SerializeField] private int _cost; // cost in levels (not exp)
 
@@ -21,14 +24,23 @@ public class Sharpness : MonoBehaviour
 
     public void EnchantWeapon()
     {
+        if (_currentLevel < _maxLevel)
+        {
             _levelSystem.LevelDown(_cost);
             _damage.IncreaseModifier(_modifierBuff);
             _modifierBuff++;
             _cost *= 2;
+            _currentLevel++;
+        }
     }
 
     public int GetCost()
     {
         return _cost;
+    }
+
+    public override void IncreaseMaxLvl(int lvl)
+    {
+        _maxLevel += lvl;
     }
 }
