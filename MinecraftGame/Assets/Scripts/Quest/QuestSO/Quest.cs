@@ -19,6 +19,11 @@ public class MainQuest : ScriptableObject, IMainQuest
     [SerializeField] private int _questId;
     public RequirementsDictionary RequirementsDictionary { get => _requirementsDictionary;} // id and cost
     [SerializeField] private RequirementsDictionary _requirementsDictionary;
+
+    public int RewardType { get => _rewardType; }
+    [Header("0 - AddExpirience, 1 - IncreaseFortuneMaxLevel, 2 - IncreaseSharpnessMaxLevel, 3 - NewBlockReward, 4 -  UnlockExpirience, 5 - UnlockMenu")]
+    [SerializeField] private int _rewardType;
+
 }
 
 [CreateAssetMenu(fileName = "New Side Quest")]

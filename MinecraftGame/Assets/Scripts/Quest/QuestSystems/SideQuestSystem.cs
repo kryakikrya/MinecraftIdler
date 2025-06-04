@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class MainQuestSystem : QuestSystem
+public class SideQuestSystem : QuestSystem
 {
-    private IMainQuest _currentMainQuest;
+    private IQuest _currentSideQuest;
 
-    private List<IMainQuest> _mainQuestList;
+    private List<IQuest> _sideQuestsList;
     private Inventory _inventory;
-    private SwitchCurrentReward _rewardTypeSwitcher;
+    private AddExpirience _addExpirience;
 
     [Inject]
-    private void Construct(List<IMainQuest> mainQuestList, Inventory inventory, SwitchCurrentReward switchCurrentReward)
+    private void Construct(List<IQuest> sideQuestsList, Inventory inventory, AddExpirience addExpirience)
     {
-        _mainQuestList = mainQuestList;
+        _sideQuestsList = sideQuestsList;
         _inventory = inventory;
-        _rewardTypeSwitcher = switchCurrentReward;
+        _addExpirience = addExpirience;
     }
     private void Start()
     {
-        _currentMainQuest = _mainQuestList[0];
+        _currentSideQuest = _sideQuestsList[0];
     }
+
     public override void ChangeUI()
     {
         
     }
     public override void CompleteQuest()
     {
-        RequirementsDictionary _requirementsDictionary = _currentMainQuest.RequirementsDictionary;
+        RequirementsDictionary _requirementsDictionary = _currentSideQuest.RequirementsDictionary;
         if (CheckInventory(_requirementsDictionary))
         {
             SpendMaterials(_requirementsDictionary);
@@ -37,8 +38,7 @@ public class MainQuestSystem : QuestSystem
     }
     public override void GiveReward()
     {
-        RewardSystem _reward = _rewardTypeSwitcher.GetRewardType(_currentMainQuest);
-        _reward.GetReward();
+        _addExpirience.GetReward();
     }
     public bool CheckInventory(RequirementsDictionary _requirementsDictionary)
     {

@@ -43,6 +43,10 @@ public class SceneInstaller : MonoInstaller
     [SerializeField] private List<BlockToAdd> _blocksToAdd;
 
     [SerializeField] private List<UnlockNewMenu> _unlockableMenuList;
+
+    [SerializeField] private SwitchCurrentReward _switchCurrentReward;
+
+    [SerializeField] private AddExpirience _addExpirience;
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -63,5 +67,8 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<List<IMainQuest>>().FromInstance(_mainQuestList).AsSingle();
         Container.Bind<List<IQuest>>().FromInstance(_sideQuestList).AsSingle();
         Container.Bind<List<BlockToAdd>>().FromInstance(_blocksToAdd).AsSingle();
+        Container.Bind<List<UnlockNewMenu>>().FromInstance(_unlockableMenuList).AsSingle();
+        Container.Bind<SwitchCurrentReward>().FromInstance(_switchCurrentReward).AsSingle();
+        Container.Bind<AddExpirience>().FromInstance(_addExpirience).AsSingle();
     }
 }
