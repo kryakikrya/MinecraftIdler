@@ -6,25 +6,29 @@ using Zenject;
 public class MainQuestSystem : QuestSystem
 {
     private IMainQuest _currentMainQuest;
+    private int _currentQuestId = 0;
 
     private List<IMainQuest> _mainQuestList;
     private Inventory _inventory;
     private SwitchCurrentReward _rewardTypeSwitcher;
+    private QuestUI _questUI;
 
     [Inject]
-    private void Construct(List<IMainQuest> mainQuestList, Inventory inventory, SwitchCurrentReward switchCurrentReward)
+    private void Construct(List<IMainQuest> mainQuestList, Inventory inventory, SwitchCurrentReward switchCurrentReward, QuestUI questUI)
     {
         _mainQuestList = mainQuestList;
         _inventory = inventory;
         _rewardTypeSwitcher = switchCurrentReward;
+        _questUI = questUI;
     }
     private void Start()
     {
-        _currentMainQuest = _mainQuestList[0];
+        _currentMainQuest = _mainQuestList[_currentQuestId];
+        ChangeUI();
     }
     public override void ChangeUI()
     {
-        
+        _questUI.ChangeQuestUI(_currentMainQuest);
     }
     public override void CompleteQuest()
     {
@@ -39,6 +43,11 @@ public class MainQuestSystem : QuestSystem
     {
         RewardSystem _reward = _rewardTypeSwitcher.GetRewardType(_currentMainQuest);
         _reward.GetReward();
+        _currentQuestId++;
+        if (_currentQuestId <= _mainQuestList.Count)
+        {
+            ChangeUI();
+        }
     }
     public bool CheckInventory(RequirementsDictionary _requirementsDictionary)
     {

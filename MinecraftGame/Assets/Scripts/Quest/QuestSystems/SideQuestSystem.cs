@@ -6,7 +6,6 @@ using Zenject;
 public class SideQuestSystem : QuestSystem
 {
     private IQuest _currentSideQuest;
-    private int _currentQuestId = 0;
 
     private List<IQuest> _sideQuestsList;
     private Inventory _inventory;
@@ -23,7 +22,7 @@ public class SideQuestSystem : QuestSystem
     }
     private void Start()
     {
-        _currentSideQuest = _sideQuestsList[_currentQuestId];
+        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count + 1)];
         ChangeUI();
     }
 
@@ -44,11 +43,7 @@ public class SideQuestSystem : QuestSystem
     public override void GiveReward()
     {
         _addExpirience.GetReward();
-        _currentQuestId++;
-        if (_currentQuestId < _sideQuestsList.Count)
-        {
-            _currentSideQuest = _sideQuestsList[_currentQuestId];
-        }
+        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count + 1)];
     }
     public bool CheckInventory(RequirementsDictionary _requirementsDictionary)
     {
