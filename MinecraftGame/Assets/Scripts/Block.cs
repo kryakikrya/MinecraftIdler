@@ -17,4 +17,5 @@ public class BlockToAdd : Block
 {
     public bool NeedToIncreaseOreChance;
     public int IncreasingValue;
+    public int Chance;
 }

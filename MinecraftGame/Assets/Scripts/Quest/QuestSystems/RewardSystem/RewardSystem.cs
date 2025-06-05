@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public abstract class RewardSystem
+public abstract class RewardSystem : MonoBehaviour
 {
     public abstract void GetReward();
 }

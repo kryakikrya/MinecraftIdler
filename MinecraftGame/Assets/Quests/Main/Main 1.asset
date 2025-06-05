@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 1
   m_EditorClassIdentifier: 
-  _questName: Hello, world!
-  _questDescription: 
+  _questName: Welcome to the game!
+  _questDescription: Welcome to the game! Welcome to the game! In the window on the
+    right you can see the resources needed to complete the quest in the Quests section.
   _questAuthor: 
   _questId: 0
   _requirementsDictionary:
-    _questRequirement: []
+    _questRequirement:
+    - _materialID: 1
+      _cost: 10
+  _rewardType: 3

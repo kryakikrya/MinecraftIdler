@@ -5,24 +5,29 @@ using UnityEngine;
 
 public class SwitchCurrentReward : MonoBehaviour
 {
-    [SerializeField] List<RewardSystem> _rewardTypes = new List<RewardSystem>();
+    [SerializeField] private AddExpirience _addExpirience;
+    [SerializeField] private IncreaseFortuneMaxLevel _increaseFortuneMaxLevel;
+    [SerializeField] private IncreaseSharpnessMaxLevel _increaseSharpnessMaxLevel;
+    [SerializeField] private NewBlockReward _newBlockReward;
+    [SerializeField] private UnlockExpirience _unlockExpirience;
+    [SerializeField] private UnlockMenu _unlockMenu;
     public RewardSystem GetRewardType(IMainQuest _quest)
     {
         switch (_quest.RewardType)
         {
             case 0:
-                return _rewardTypes[0];
+                return _addExpirience;
             case 1:
-                return _rewardTypes[1];
+                return _increaseFortuneMaxLevel;
             case 2:
-                return _rewardTypes[2];
+                return _increaseSharpnessMaxLevel;
             case 3:
-                return _rewardTypes[3];
+                return _newBlockReward;
             case 4:
-                return _rewardTypes[4];
+                return _unlockExpirience;
             case 5:
-                return _rewardTypes[5];
+                return _unlockMenu;
         }
-        return _rewardTypes[0];
+        return _addExpirience;
     }
 }

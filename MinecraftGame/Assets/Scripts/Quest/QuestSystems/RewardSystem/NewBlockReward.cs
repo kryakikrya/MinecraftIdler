@@ -21,7 +21,7 @@ public class NewBlockReward : RewardSystem
         if (_currentBlockId <= _blocksToAdd.Count)
         {
             BlockToAdd _newBlock = _blocksToAdd[_currentBlockId];
-            _addNewBlocks.AddNewBlock(_newBlock, _newBlock.NeedToIncreaseOreChance, _newBlock.IncreasingValue);
+            _addNewBlocks.AddNewBlock(_newBlock, _newBlock.Chance, _newBlock.NeedToIncreaseOreChance, _newBlock.IncreasingValue);
         }
     }
 }
