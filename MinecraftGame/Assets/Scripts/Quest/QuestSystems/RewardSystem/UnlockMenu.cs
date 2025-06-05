@@ -19,6 +19,7 @@ public class UnlockMenu : RewardSystem
         if (_currentMenuId <= _unlockableMenuList.Count)
         {
             _unlockableMenuList[_currentMenuId].Unlock();
+            _currentMenuId++;
         }
     }
 }

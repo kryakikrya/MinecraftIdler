@@ -39,6 +39,8 @@ public class ShopUpgradingWeapon : MonoBehaviour
             {
                 _inventory.RemoveFromInventory(_idList[i], _costs[i]);
                 _damage.IncreaseDamage(_buff);
+                _costs[i] += 2;
+                print(_damage + "    buff: " + _buff);
                 _shopUI.UpdateUI();
             }
         }
