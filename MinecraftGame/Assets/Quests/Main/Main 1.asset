@@ -20,5 +20,5 @@ MonoBehaviour:
   _requirementsDictionary:
     _questRequirement:
     - _materialID: 1
-      _cost: 10
+      _cost: 5
   _rewardType: 3
