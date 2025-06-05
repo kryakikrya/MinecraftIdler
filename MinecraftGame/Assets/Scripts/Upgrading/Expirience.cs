@@ -6,7 +6,7 @@ using Zenject;
 
 public class Expirience : MonoBehaviour
 {
-    private bool _isActive = true;
+    private bool _isActive = false;
 
     private float _expirience;
     private int _level;

@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -50,7 +50,7 @@ public class Generation : MonoBehaviour
         else
         {
             int _chance = Random.Range(0, 101);
-            if (_chance < 90) ChangeBlockInPool(_poolMember, _blocksList[0]);
+            if (_chance < 70) ChangeBlockInPool(_poolMember, _blocksList[0]);
             else if (_chance < 101) ChangeBlockInPool(_poolMember, _blocksList[1]);
         }
     }
@@ -60,5 +60,25 @@ public class Generation : MonoBehaviour
         _poolMember.ChangeID(_blockToCopy.MaterialID);
         _poolMember.ChangeSprite(_blockToCopy.Sprite);
         _poolMember.ChangeExpirience(_blockToCopy.Expirience);
+    }
+
+    public void PrintGenerationInfo()
+    {
+        print("Ore chance - " + _oreChance);
+        for (int i = 0; i < _blocksList.Count; i++)
+        {
+            print(_blocksList[i].BlockName);
+        }
+        print("Sum of chances - " + _sumOfChances);
+    }
+
+    public void IncreaseOreChance(int value)
+    {
+        _oreChance += value;
+        UpdateSumOfChanses();
+    }
+    public void AddNewChance(int value)
+    {
+        _chansesList.Add(value);
     }
 }
