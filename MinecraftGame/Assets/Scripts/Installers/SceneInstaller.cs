@@ -47,6 +47,8 @@ public class SceneInstaller : MonoInstaller
     [SerializeField] private SwitchCurrentReward _switchCurrentReward;
 
     [SerializeField] private AddExpirience _addExpirience;
+
+    [SerializeField] private QuestUI _QuestUI;
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -70,5 +72,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<List<UnlockNewMenu>>().FromInstance(_unlockableMenuList).AsSingle();
         Container.Bind<SwitchCurrentReward>().FromInstance(_switchCurrentReward).AsSingle();
         Container.Bind<AddExpirience>().FromInstance(_addExpirience).AsSingle();
+        Container.Bind<QuestUI>().FromInstance(_QuestUI).AsSingle();
     }
 }

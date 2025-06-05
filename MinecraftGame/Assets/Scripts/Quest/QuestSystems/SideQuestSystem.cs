@@ -6,26 +6,30 @@ using Zenject;
 public class SideQuestSystem : QuestSystem
 {
     private IQuest _currentSideQuest;
+    private int _currentQuestId = 0;
 
     private List<IQuest> _sideQuestsList;
     private Inventory _inventory;
     private AddExpirience _addExpirience;
+    private QuestUI _sideQuestUI;
 
     [Inject]
-    private void Construct(List<IQuest> sideQuestsList, Inventory inventory, AddExpirience addExpirience)
+    private void Construct(List<IQuest> sideQuestsList, Inventory inventory, AddExpirience addExpirience, QuestUI sideQuestUI)
     {
         _sideQuestsList = sideQuestsList;
         _inventory = inventory;
         _addExpirience = addExpirience;
+        _sideQuestUI = sideQuestUI;
     }
     private void Start()
     {
-        _currentSideQuest = _sideQuestsList[0];
+        _currentSideQuest = _sideQuestsList[_currentQuestId];
+        ChangeUI();
     }
 
     public override void ChangeUI()
     {
-        
+        _sideQuestUI.ChangeQuestUI(_currentSideQuest);
     }
     public override void CompleteQuest()
     {
@@ -34,11 +38,17 @@ public class SideQuestSystem : QuestSystem
         {
             SpendMaterials(_requirementsDictionary);
             GiveReward();
+            ChangeUI();
         }
     }
     public override void GiveReward()
     {
         _addExpirience.GetReward();
+        _currentQuestId++;
+        if (_currentQuestId < _sideQuestsList.Count)
+        {
+            _currentSideQuest = _sideQuestsList[_currentQuestId];
+        }
     }
     public bool CheckInventory(RequirementsDictionary _requirementsDictionary)
     {
