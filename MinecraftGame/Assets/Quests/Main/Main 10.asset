@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
-  m_Name: Main 1
+  m_Name: Main 10
   m_EditorClassIdentifier: 
-  _questName: hey
-  _questDescription: Hey, We need some dirt to build a house out of it and survive
-    the first night! Help us!
+  _questName: 
+  _questDescription: 
   _questAuthor: 
-  _questId: 1
+  _questId: 0
   _requirementsDictionary:
-    _questRequirement:
-    - _materialID: 1
-      _cost: 5
-  _rewardType: 3
+    _questRequirement: []
+  _rewardType: 0

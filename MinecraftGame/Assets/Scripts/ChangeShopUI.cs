@@ -37,7 +37,6 @@ public class ChangeShopUI : MonoBehaviour
         for (int i = 0; i < _materialIDList.Count; i++)
         {
             _imagesList[i].gameObject.SetActive(true);
-            _imagesList[i].sprite = _blocksList[_materialIDList[i]].ItemSprite;
         }
         _resultImage.sprite = _itemsList[_resultItemID].ItemSprite;
     }

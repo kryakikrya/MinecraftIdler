@@ -46,6 +46,7 @@ public class MainQuestSystem : QuestSystem
         _currentQuestId++;
         if (_currentQuestId <= _mainQuestList.Count)
         {
+            _currentMainQuest = _mainQuestList[_currentQuestId];
             ChangeUI();
         }
     }

@@ -25,6 +25,7 @@ public class Generation : MonoBehaviour
 
     public void UpdateSumOfChanses()
     {
+        _sumOfChances = 0;
         for (int i = 0; i < _chansesList.Count; i++)
         {
             _sumOfChances += _chansesList[i];

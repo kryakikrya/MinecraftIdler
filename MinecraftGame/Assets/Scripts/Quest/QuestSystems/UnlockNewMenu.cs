@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnlockNewMenu
+public class UnlockNewMenu : MonoBehaviour
 {
     [SerializeField] Button _menuToUnlock;
 
