@@ -9,12 +9,14 @@ public class NewBlockReward : RewardSystem
     private AddNewBlocks _addNewBlocks;
     private List<BlockToAdd> _blocksToAdd;
     private int _currentBlockId = 0;
+    private List<UIInventory> _uiInventory;
 
     [Inject]
-    private void Construct(AddNewBlocks addNewBlocks, List<BlockToAdd> blocksToAdd)
+    private void Construct(AddNewBlocks addNewBlocks, List<BlockToAdd> blocksToAdd, List<UIInventory> uiInventory)
     {
         _addNewBlocks = addNewBlocks;
         _blocksToAdd = blocksToAdd;
+        _uiInventory = uiInventory;
     }
     public override void GetReward()
     {
@@ -22,6 +24,7 @@ public class NewBlockReward : RewardSystem
         {
             BlockToAdd _newBlock = _blocksToAdd[_currentBlockId];
             _addNewBlocks.AddNewBlock(_newBlock, _newBlock.Chance, _newBlock.NeedToIncreaseOreChance, _newBlock.IncreasingValue);
+            _uiInventory[_currentBlockId + 2].gameObject.SetActive(true);
         }
     }
 }

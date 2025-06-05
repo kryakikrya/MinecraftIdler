@@ -5,20 +5,19 @@ using Zenject;
 
 public class SideQuestSystem : QuestSystem
 {
-    private IQuest _currentSideQuest;
+    private SideQuest _currentSideQuest;
 
-    private List<IQuest> _sideQuestsList;
+    private List<SideQuest> _sideQuestsList;
     private Inventory _inventory;
     private AddExpirience _addExpirience;
-    private QuestUI _sideQuestUI;
+    [SerializeField] private QuestUI _sideQuestUI;
 
     [Inject]
-    private void Construct(List<IQuest> sideQuestsList, Inventory inventory, AddExpirience addExpirience, QuestUI sideQuestUI)
+    private void Construct(List<SideQuest> sideQuestsList, Inventory inventory, AddExpirience addExpirience)
     {
         _sideQuestsList = sideQuestsList;
         _inventory = inventory;
         _addExpirience = addExpirience;
-        _sideQuestUI = sideQuestUI;
     }
     private void Start()
     {
@@ -28,7 +27,7 @@ public class SideQuestSystem : QuestSystem
 
     public override void ChangeUI()
     {
-        _sideQuestUI.ChangeQuestUI(_currentSideQuest);
+        _sideQuestUI.ChangeSideQuestUI(_currentSideQuest);
     }
     public override void CompleteQuest()
     {

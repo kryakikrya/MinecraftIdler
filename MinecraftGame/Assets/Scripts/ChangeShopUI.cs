@@ -21,7 +21,7 @@ public class ChangeShopUI : MonoBehaviour
         _blocksList = blocksList;
         _itemsList = itemsList;
     }
-    void Start()
+    private void OnEnable()
     {
         _panel = GetComponent<ShopUpgradingWeapon>();
         UpdateUI();

@@ -16,8 +16,24 @@ public class QuestUI : MonoBehaviour
     {
         _blocksList = blocksList;
     }
-    
-    public void ChangeQuestUI(IQuest _quest)
+
+    public void ChangeSideQuestUI(SideQuest _quest)
+    {
+        for (int i = 0; i < _imagesList.Count; i++)
+        {
+            _imagesList[i].gameObject.SetActive(false);
+            _textList[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i < _quest.RequirementsDictionary.Count(); i++)
+        {
+            _imagesList[i].gameObject.SetActive(true);
+            _imagesList[i].sprite = _blocksList[_quest.RequirementsDictionary.GetRequirementById(i).Key].ItemSprite;
+            _textList[i].gameObject.SetActive(true);
+            _textList[i].text = (_quest.RequirementsDictionary.GetRequirementById(i).Value).ToString();
+        }
+        _descriptionText.text = _quest.QuestDescription;
+    }
+    public void ChangeMainQuestUI(MainQuest _quest)
     {
         for (int i = 0; i < _imagesList.Count; i++)
         {

@@ -5,21 +5,20 @@ using Zenject;
 
 public class MainQuestSystem : QuestSystem
 {
-    private IMainQuest _currentMainQuest;
+    private MainQuest _currentMainQuest;
     private int _currentQuestId = 0;
 
-    private List<IMainQuest> _mainQuestList;
+    private List<MainQuest> _mainQuestList;
     private Inventory _inventory;
     private SwitchCurrentReward _rewardTypeSwitcher;
-    private QuestUI _questUI;
+    [SerializeField] private QuestUI _questUI;
 
     [Inject]
-    private void Construct(List<IMainQuest> mainQuestList, Inventory inventory, SwitchCurrentReward switchCurrentReward, QuestUI questUI)
+    private void Construct(List<MainQuest> mainQuestList, Inventory inventory, SwitchCurrentReward switchCurrentReward)
     {
         _mainQuestList = mainQuestList;
         _inventory = inventory;
         _rewardTypeSwitcher = switchCurrentReward;
-        _questUI = questUI;
     }
     private void Start()
     {
@@ -28,7 +27,7 @@ public class MainQuestSystem : QuestSystem
     }
     public override void ChangeUI()
     {
-        _questUI.ChangeQuestUI(_currentMainQuest);
+        _questUI.ChangeMainQuestUI(_currentMainQuest);
     }
     public override void CompleteQuest()
     {
