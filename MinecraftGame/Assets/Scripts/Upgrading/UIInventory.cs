@@ -24,7 +24,7 @@ public class UIInventory : MonoBehaviour
 
     private void Start()
     {
-        _image = GetComponentInChildren<Image>();
+        _image = GetComponentInChildren<Image>(true);
         _image.sprite = _blocksList[_materialID].ItemSprite;
         _cooldown = StartCoroutine(Cooldown());
     }

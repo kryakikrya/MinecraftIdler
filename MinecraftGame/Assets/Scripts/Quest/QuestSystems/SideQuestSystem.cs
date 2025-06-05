@@ -21,7 +21,7 @@ public class SideQuestSystem : QuestSystem
     }
     private void Start()
     {
-        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count + 1)];
+        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count)];
         ChangeUI();
     }
 
@@ -36,13 +36,14 @@ public class SideQuestSystem : QuestSystem
         {
             SpendMaterials(_requirementsDictionary);
             GiveReward();
+            print("Side Quest Completed!");
             ChangeUI();
         }
     }
     public override void GiveReward()
     {
         _addExpirience.GetReward();
-        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count + 1)];
+        _currentSideQuest = _sideQuestsList[Random.Range(0, _sideQuestsList.Count)];
     }
     public bool CheckInventory(RequirementsDictionary _requirementsDictionary)
     {

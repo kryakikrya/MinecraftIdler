@@ -36,6 +36,7 @@ public class MainQuestSystem : QuestSystem
         {
             SpendMaterials(_requirementsDictionary);
             GiveReward();
+            print("Main Quest Completed!");
         }
     }
     public override void GiveReward()
