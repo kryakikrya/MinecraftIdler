@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Main 7
   m_EditorClassIdentifier: 
   _questName: Fortune
-  _questDescription: It's time to create our own enchantment table!
+  _questDescription: It's time to create our own enchantment table! (opens Enchantments
+    (book-button in the shop), Fortune will give you more blocks and Sharpness will
+    increase your damage)
   _questAuthor: 
   _questId: 7
   _requirementsDictionary:

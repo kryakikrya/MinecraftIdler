@@ -5,7 +5,7 @@ using Zenject;
 
 public class Fortune : Enchantment
 {
-    private int _maxLevel;
+    private int _maxLevel = 3;
     private int _currentLevel;
 
     [SerializeField] private int _buff;

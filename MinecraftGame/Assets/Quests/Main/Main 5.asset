@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Expirince!
   _questDescription: During our travels we found a potion from a merchant that activates
-    magical abilities, he asks for a lot of gold to buy it!
+    magical abilities, he asks for a lot of gold to buy it! (opens Expirience)
   _questAuthor: 
   _questId: 5
   _requirementsDictionary:

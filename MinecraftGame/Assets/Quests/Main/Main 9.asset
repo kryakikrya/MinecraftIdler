@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main 9
   m_EditorClassIdentifier: 
   _questName: Diamond Upgrade
-  _questDescription: Time to upgrade our anvil!
+  _questDescription: Time to upgrade our anvil! (Diamonds Upgrade)
   _questAuthor: 
   _questId: 9
   _requirementsDictionary:

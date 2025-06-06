@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Main 10
   m_EditorClassIdentifier: 
   _questName: LAST DANCE
-  _questDescription: Many people pay with emeralds at the market. Give us emeralds
+  _questDescription: Many people pay with diamonds at the market. Give us diamonds
     so we can buy a lot of weapons and defeat the dragon! (final quest)
   _questAuthor: 
   _questId: 10
   _requirementsDictionary:
-    _questRequirement: []
+    _questRequirement:
+    - _materialID: 4
+      _cost: 130
   _rewardType: 5

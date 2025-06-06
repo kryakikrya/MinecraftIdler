@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Diamonds!
   _questDescription: Looks like we can upgrade our compass to start finding diamonds!
+    (open Diamonds)
   _questAuthor: 
   _questId: 6
   _requirementsDictionary:
