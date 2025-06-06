@@ -54,6 +54,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private CanLMB _canLMB;
 
+    [SerializeField] ParticleEffect _particleEffect;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -80,5 +82,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<List<UIInventory>>().FromInstance(_uiInventory).AsSingle();
         Container.Bind<SoundManager>().FromInstance(_soundManager).AsSingle();
         Container.Bind<CanLMB>().FromInstance(_canLMB).AsSingle();
+        Container.Bind<ParticleEffect>().FromInstance(_particleEffect).AsSingle();
     }
 }

@@ -29,8 +29,9 @@ public class Sharpness : Enchantment
             _levelSystem.LevelDown(_cost);
             _damage.IncreaseModifier(_modifierBuff);
             _modifierBuff++;
-            _cost *= 2;
+            _cost += 5;
             _currentLevel++;
+            print("Increase Sharpness");
         }
     }
 

@@ -16,6 +16,6 @@ public class AddExpirience : RewardSystem
     public override void GetReward()
     {
         _expirience.IncreaseExpirience(_addExp);
-        _addExp += 100;
+        _addExp += 150;
     }
 }

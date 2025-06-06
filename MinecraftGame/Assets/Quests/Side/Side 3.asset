@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Side 1
+  m_Name: Side 3
   m_EditorClassIdentifier: Assembly-CSharp::SideQuest
-  _questName: Kamenb ya Ne Dam
-  _questDescription: The channel needs to be blocked with stone...
+  _questName: WE NEED ALL
+  _questDescription: We resell resources, so we need everything.
   _requirementsDictionary:
     _questRequirement:
-    - _materialID: 1
-      _cost: 55
+    - _materialID: 2
+      _cost: 10
+    - _materialID: 3
+      _cost: 10
+    - _materialID: 4
+      _cost: 10

@@ -8,11 +8,13 @@ public class Mining : MonoBehaviour
     [SerializeField] private Transform _raycastPosition;
     private Upgrade _damage;
     [SerializeField] float _miningCD;
+    private ParticleEffect _particleEffect;
 
     [Inject]
-    private void Construct(Upgrade damage)
+    private void Construct(Upgrade damage, ParticleEffect particleEffect)
     {
         _damage = damage;
+        _particleEffect = particleEffect;
     }
     private void Start()
     {
@@ -24,6 +26,7 @@ public class Mining : MonoBehaviour
         if (hit)
         {
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
+            _particleEffect.ClickEffect(_poolMember.gameObject.transform.position + Vector3.up);
             _poolMember.GetDamage(_damage, false);
         }
     }

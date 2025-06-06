@@ -28,7 +28,8 @@ public class Fortune : Enchantment
             _levelSystem.LevelDown(_cost);
             _fortuneModifier += _buff;
             _buff++;
-            _cost *= 2;
+            _cost += 10;
+            print("Increase Fortune");
         }
     }
 
