@@ -52,6 +52,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private SoundManager _soundManager;
 
+    [SerializeField] private CanLMB _canLMB;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -77,5 +79,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<AddExpirience>().FromInstance(_addExpirience).AsSingle();
         Container.Bind<List<UIInventory>>().FromInstance(_uiInventory).AsSingle();
         Container.Bind<SoundManager>().FromInstance(_soundManager).AsSingle();
+        Container.Bind<CanLMB>().FromInstance(_canLMB).AsSingle();
     }
 }

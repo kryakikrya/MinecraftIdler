@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Iron
+  m_Script: {fileID: 11500000, guid: 6a5d76acb64385144aa0593c97993db7, type: 3}
+  m_Name: Iron 1
   m_EditorClassIdentifier: Assembly-CSharp::BlockToAdd
   BlockName: Iron
   MaterialID: 2
   Durability: 350
   Expirience: 30
   Sprite: {fileID: 21300000, guid: f6fc637f73c8c7f4b98ffd699b24fd8a, type: 3}
-  ItemSprite: {fileID: 21300000, guid: d1e951810b25bb54285755856dfde179, type: 3}
+  ItemSprite: {fileID: 21300000, guid: 5e5539dd46832b14c818ef37126a354f, type: 3}
   NeedToIncreaseOreChance: 1
   IncreasingValue: 10
   Chance: 100

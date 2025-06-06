@@ -11,11 +11,3 @@ public class Block : ScriptableObject
     public Sprite Sprite;
     public Sprite ItemSprite;
 }
-
-[CreateAssetMenu(fileName = "Block To Add")]
-public class BlockToAdd : Block
-{
-    public bool NeedToIncreaseOreChance;
-    public int IncreasingValue;
-    public int Chance;
-}

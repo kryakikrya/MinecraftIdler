@@ -8,39 +8,29 @@ using Zenject;
 public class LMBShooting : MonoBehaviour
 {
     private Upgrade _damage;
-    float _miningCD = 0.5f;
-    private bool _canShoot = true;
+    private CanLMB _canShoot;
     private PoolMember _poolMember;
 
     [Inject]
-    private void Construct(Upgrade damage)
+    private void Construct(Upgrade damage, CanLMB canLMB)
     {
         _damage = damage;
+        _canShoot = canLMB;
     }
 
     private void OnEnable()
     {
-        _canShoot = true;
+        _canShoot.SetCanShoot(true);
         if (_poolMember == null)
             _poolMember = GetComponent<PoolMember>();
     }
     private void OnMouseDown()
     {
-        if (_canShoot)
+        if (_canShoot.GetCanShoot())
         {
-            _poolMember.GetDamage(_damage.GetDamageValue() * 2, true);
-            _canShoot = false;
-            if (gameObject.activeSelf == true)
-            {
-                StartCoroutine(MiningCD(_miningCD));
-            }
+            _poolMember.GetDamage(_damage.GetDamageValue() * 3, true);
+            _canShoot.SetCanShoot(false);
         }
-    }
-
-    private IEnumerator MiningCD(float _miningCD)
-    {
-        yield return new WaitForSeconds(_miningCD);
-        _canShoot = true;
     }
 
 #if UNITY_EDITOR
