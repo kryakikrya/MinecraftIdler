@@ -50,6 +50,8 @@ public class SceneInstaller : MonoInstaller
 
     [SerializeField] private List<UIInventory> _uiInventory;
 
+    [SerializeField] private SoundManager _soundManager;
+
     public override void InstallBindings()
     {
         Container.Bind<List<Block>>().FromInstance(_blocksList).AsSingle();
@@ -74,5 +76,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<SwitchCurrentReward>().FromInstance(_switchCurrentReward).AsSingle();
         Container.Bind<AddExpirience>().FromInstance(_addExpirience).AsSingle();
         Container.Bind<List<UIInventory>>().FromInstance(_uiInventory).AsSingle();
+        Container.Bind<SoundManager>().FromInstance(_soundManager).AsSingle();
     }
 }

@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 2
   m_EditorClassIdentifier: 
-  _questName: 
-  _questDescription: 
+  _questName: Iron Upgrade
+  _questDescription: Now we have iron, which means we can make an anvil to improve
+    our tools!
   _questAuthor: 
-  _questId: 0
+  _questId: 2
   _requirementsDictionary:
-    _questRequirement: []
-  _rewardType: 0
+    _questRequirement:
+    - _materialID: 2
+      _cost: 4
+  _rewardType: 5

@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 6
   m_EditorClassIdentifier: 
-  _questName: 
-  _questDescription: 
+  _questName: Diamonds!
+  _questDescription: Looks like we can upgrade our compass to start finding diamonds!
   _questAuthor: 
-  _questId: 0
+  _questId: 6
   _requirementsDictionary:
-    _questRequirement: []
-  _rewardType: 0
+    _questRequirement:
+    - _materialID: 2
+      _cost: 5
+    - _materialID: 3
+      _cost: 5
+    - _materialID: 0
+      _cost: 50
+  _rewardType: 3

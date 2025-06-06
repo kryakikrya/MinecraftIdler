@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 1
   m_EditorClassIdentifier: 
-  _questName: hey
-  _questDescription: Hey, We need some dirt to build a house out of it and survive
-    the first night! Help us!
+  _questName: Iron Quest
+  _questDescription: Hey, We need some dirt and stone to build a house out of it
+    and survive the first night! Help us!
   _questAuthor: 
   _questId: 1
   _requirementsDictionary:
     _questRequirement:
     - _materialID: 1
       _cost: 5
+    - _materialID: 0
+      _cost: 10
   _rewardType: 3

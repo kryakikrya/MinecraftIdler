@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 5
   m_EditorClassIdentifier: 
-  _questName: 
-  _questDescription: 
+  _questName: Expirince!
+  _questDescription: During our travels we found a potion from a merchant that activates
+    magical abilities, he asks for a lot of gold to buy it!
   _questAuthor: 
-  _questId: 0
+  _questId: 5
   _requirementsDictionary:
-    _questRequirement: []
-  _rewardType: 0
+    _questRequirement:
+    - _materialID: 3
+      _cost: 5
+  _rewardType: 4

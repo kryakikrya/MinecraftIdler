@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019d1dad13df2f24a95bf7194d9a15fc, type: 3}
   m_Name: Main 8
   m_EditorClassIdentifier: 
-  _questName: 
-  _questDescription: 
+  _questName: Market Fee
+  _questDescription: We found a market where many are willing to buy resources for
+    experience potions, but we need to pay an entrance fee.
   _questAuthor: 
-  _questId: 0
+  _questId: 8
   _requirementsDictionary:
-    _questRequirement: []
-  _rewardType: 0
+    _questRequirement:
+    - _materialID: 2
+      _cost: 5
+    - _materialID: 3
+      _cost: 5
+    - _materialID: 4
+      _cost: 5
+  _rewardType: 5

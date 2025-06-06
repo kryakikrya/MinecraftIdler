@@ -20,4 +20,4 @@ MonoBehaviour:
     _questRequirement:
     - _materialID: 4
       _cost: 15
-  _rewardType: 0
+  _rewardType: 5

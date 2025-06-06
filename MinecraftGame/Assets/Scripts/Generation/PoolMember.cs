@@ -13,13 +13,15 @@ public class PoolMember : MonoBehaviour
     private PoolManager _poolManager;
     private Inventory _inventory;
     private Expirience _levelSystem;
+    private SoundManager _soundManager;
 
 
     [Inject]
-    private void Construct(Inventory inventory, Expirience levelSystem)
+    private void Construct(Inventory inventory, Expirience levelSystem, SoundManager soundManager)
     {
         _inventory = inventory;
         _levelSystem = levelSystem;
+        _soundManager = soundManager;
     }
 
     private void Awake()
@@ -59,6 +61,7 @@ public class PoolMember : MonoBehaviour
             }
             _inventory.PutInInventory(_materialID, 1);
             _levelSystem.IncreaseExpirience(_expirience);
+            _soundManager.PlayClip(0);
             gameObject.SetActive(false);
         }
     }

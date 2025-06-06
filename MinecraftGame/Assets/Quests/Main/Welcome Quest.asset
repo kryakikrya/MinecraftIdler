@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Welcome Quest
   m_EditorClassIdentifier: 
   _questName: Welcome to the game!
-  _questDescription: Welcome to the game! - You're farming lower blocks automatically.
-    - You can use LMB to farm side blocks - In Quests you can complete quests (and
-    open new mechanics). Get 1 Dirt and complete current quest
+  _questDescription: Welcome to the game! 1) You're farming lower blocks automatically.
+    2) You can use LMB to farm side blocks. 3) In Quests you can complete quests
+    (and open new mechanics)
   _questAuthor: 
   _questId: 0
   _requirementsDictionary:
-    _questRequirement: []
+    _questRequirement:
+    - _materialID: 1
+      _cost: 1
   _rewardType: 0
