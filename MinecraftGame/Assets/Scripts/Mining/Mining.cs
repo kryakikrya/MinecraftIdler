@@ -28,6 +28,7 @@ public class Mining : MonoBehaviour
             PoolMember _poolMember = hit.transform.GetComponent<PoolMember>();
             _particleEffect.ClickEffect(_poolMember.gameObject.transform.position + Vector3.up);
             _poolMember.GetDamage(_damage, false);
+            Debug.DrawRay(_raycastPosition.position, transform.TransformDirection(Vector3.down) * 10, Color.green, 1, false);
         }
     }
     private IEnumerator MiningCD(float _miningCD)
