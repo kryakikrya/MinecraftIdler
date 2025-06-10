@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Iron Upgrade
   _questDescription: Now we have iron, which means we can make an anvil to improve
-    our tools!
+    our tools! (Opens Iron Upgrade in the shop)
   _questAuthor: 
   _questId: 2
   _requirementsDictionary:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Market Fee
   _questDescription: We found a market where many are willing to buy resources for
-    experience potions, but we need to pay an entrance fee.
+    experience potions, but we need to pay an entrance fee. (Opens Side Quests)
   _questAuthor: 
   _questId: 8
   _requirementsDictionary:

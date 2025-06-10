@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Gold! Gold! Gold!
   _questDescription: We've learned the recipe for a secret compass that lets you
-    find gold! But we need some iron to make it.
+    find gold! But we need some iron to make it. (opens Gold)
   _questAuthor: 
   _questId: 3
   _requirementsDictionary:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main 4
   m_EditorClassIdentifier: 
   _questName: Gold Upgrade
-  _questDescription: We can upgrade the anvil with gold!
+  _questDescription: We can upgrade the anvil with gold (opens Gold upgrade)
   _questAuthor: 
   _questId: 4
   _requirementsDictionary:

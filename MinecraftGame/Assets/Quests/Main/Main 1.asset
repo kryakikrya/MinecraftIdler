@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questName: Iron Quest
   _questDescription: Hey, We need some dirt and stone to build a house out of it
-    and survive the first night! Help us!
+    and survive the first night! Help us! (opens Iron)
   _questAuthor: 
   _questId: 1
   _requirementsDictionary:
